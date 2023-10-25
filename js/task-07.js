@@ -1,14 +1,8 @@
-const colorText = document.querySelector(".color");
-const changeColorButton = document.querySelector(".change-color");
+const fontSizeControl = document.querySelector("#font-size-control");
+const text = document.querySelector("#text");
 
-changeColorButton.addEventListener("click", () => {
-  const randomColor = getRandomHexColor();
-  colorText.textContent = randomColor;
-  document.body.style.backgroundColor = randomColor;
+fontSizeControl.addEventListener("input", function () {
+  const fontSize = this.value;
+
+  text.style.fontSize = `${fontSize}px`;
 });
-
-function getRandomHexColor() {
-  return `#${Math.floor(Math.random() * 16777215)
-    .toString(16)
-    .padStart(6, 0)}`;
-}
